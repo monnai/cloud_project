@@ -1,13 +1,16 @@
 package com.gu.gan;
 
+import com.gu.gan.util.SpringContextUtil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class GanApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(GanApplication.class, args);
+    ConfigurableApplicationContext context = SpringApplication.run(GanApplication.class, args);
+    SpringContextUtil.setApplicationContext(context);
   }
 
 }

@@ -5,7 +5,6 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <!--<version>2.3.3.RELEASE</version>-->
     <version>2.1.3.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
@@ -15,7 +14,12 @@
   <name>cloud</name>
   <description>cloud learning</description>
   <packaging>war</packaging>
-
+  <properties>
+    <jdbc.driverClass>com.mysql.cj.jdbc.Driver</jdbc.driverClass>
+    <jdbc.connectionURL>jdbc:mysql://localhost:3306/mall?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=Asia/Shanghai</jdbc.connectionURL>
+    <jdbc.userId>root</jdbc.userId>
+    <jdbc.password>111111</jdbc.password>
+  </properties>
   <dependencies>
     <!--SpringBoot通用依赖模块-->
     <dependency>
@@ -59,6 +63,7 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.15</version>
     </dependency>
+    <!--jdbc driver-->
   </dependencies>
   <build>
     <plugins>
